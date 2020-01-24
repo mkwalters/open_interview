@@ -99,7 +99,7 @@ body {
 
 /* Style the header */
 header {
-  background-color: #666;
+  background-color: #000;
   text-align: center;
   font-size: 20px;
   color: white;
@@ -119,7 +119,7 @@ nav {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background: #ccc;
+  background: #000;
   padding: 20px;
   text-align: center
 }
@@ -135,13 +135,13 @@ article {
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 1;
-  background-color: #ccc;
+  background-color: #000;
   padding: 10px;
 }
 
 /* Style the footer */
 footer {
-  background-color: #777;
+  background-color: #000;
   text-align: center;
   color: white;
   display: flex;

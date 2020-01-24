@@ -67,7 +67,7 @@ module.exports = {
 
             if (session['reservation_count'] < session['reservation_limit']) {
                 console.log('WE are okay to reserve')
-                
+
                 sessionModel.findOneAndUpdate({_id: req.body.session_id}, {$inc : { reservation_count: 1 }}).exec();
                 var reservation = new reservationModel({
                     email : req.body.email,
@@ -85,7 +85,9 @@ module.exports = {
                     return res.status(201).json(reservation);
                 });
             } else {
-                console.log('all full!')
+                return res.status(503).json({
+                    message: 'That session is currently full'
+                });
             }
         });
 

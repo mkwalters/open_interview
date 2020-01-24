@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
+// rename this model to classSession in future
+
 var sessionSchema = new Schema({
 	'time' : String,
 	'duration' : Number,

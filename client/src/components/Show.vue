@@ -11,13 +11,17 @@
   </span>
   <br>
   <button v-on:click="reserve">Reserve</button>
+  <p>{{confirmation_message}}</p>
 	</div>
 </template>
 
 <script>
 export default {
 	data: function() {
-		return {sessions: []}
+		return {
+      sessions: [],
+      confirmation_message: "confirmed"
+    }
 	},
   created () {
     fetch('http://localhost:3000/sessions/' + this.$route.params.id.toString() )
@@ -43,9 +47,37 @@ export default {
         'Content-Type': 'application/json'
       },
     }).then((response) => {
-      response
+      if (response.status == 201) {
+        this.confirmation_message = "Your reservation was successfully completed! See ya soon!"
+      } else if (response.status == 503) {
+        this.confirmation_message = "We apologize but that class is already full."
+      } else {
+        this.confirmation_message = "An error occured."
+      }
+
     });
     }
   }
 }
 </script>
+
+<style scoped>
+.wrapper, html, body {
+    height: 100%;
+    margin: 0;
+}
+
+p {
+  color: green;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  height: 100%;
+
+}
+</style>
