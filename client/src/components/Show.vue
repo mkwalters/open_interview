@@ -3,13 +3,16 @@
 
 <template>
 	<div>
-	<p>{{$route.params.id}}</p>
 	<p>{{sessions.name}}</p>
+	<p>{{sessions.teacher}}</p>
+  <p>{{sessions.description}}</p>
+  <p>{{sessions.time}}</p>
   <span>
     email:
     <input type="text" id="email_input">
   </span>
-  <br>
+  <br/>
+  <br/>
   <button v-on:click="reserve">Reserve</button>
   <p>{{confirmation_message}}</p>
 	</div>
@@ -20,7 +23,7 @@ export default {
 	data: function() {
 		return {
       sessions: [],
-      confirmation_message: "confirmed"
+      confirmation_message: ""
     }
 	},
   created () {
@@ -71,13 +74,4 @@ p {
   color: green;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100%;
-
-}
 </style>

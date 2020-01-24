@@ -117,6 +117,8 @@ header {
   flex:2;
 }
 
+
+
 /* Container for flexboxes */
 section {
   display: -webkit-flex;
@@ -163,4 +165,5 @@ footer {
   display: flex;
   flex: 2;
 }
+
 </style>
