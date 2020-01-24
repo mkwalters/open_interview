@@ -67,6 +67,8 @@ module.exports = {
 
             if (session['reservation_count'] < session['reservation_limit']) {
                 console.log('WE are okay to reserve')
+                
+                sessionModel.findOneAndUpdate({_id: req.body.session_id}, {$inc : { reservation_count: 1 }}).exec();
                 var reservation = new reservationModel({
                     email : req.body.email,
                     session_id : req.body.session_id

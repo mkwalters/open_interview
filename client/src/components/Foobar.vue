@@ -36,7 +36,7 @@
         </nav>
         
         <article>
-          <p>put the logo here</p>
+          <img alt="Vue logo" src="./../assets/logo.png">
         </article>
       </section>
 
