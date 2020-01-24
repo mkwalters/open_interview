@@ -25,8 +25,8 @@
 
       <section>
         <nav>
-          <li v-for="session in sessions">
-            <router-link to="/foo"> 
+          <li v-for="session in sessions" :key="session._id">
+            <router-link :to="{ name: 'show', params: { id: session._id }}">
             {{session.teacher}}
             {{session.name}} 
             {{session.time}}
