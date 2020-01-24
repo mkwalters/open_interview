@@ -15,10 +15,10 @@
 
       <header>
         <div class="header_container">
-          <p>o</p>
-          <p>p</p>
-          <p>e</p>
-          <p>n</p>
+          <p style="flex-grow:2">o</p>
+          <p style="flex-grow:4">p</p>
+          <p style="flex-grow:13">e</p>
+          <p style="flex-grow:2">n</p>
         </div>
 
       </header>
