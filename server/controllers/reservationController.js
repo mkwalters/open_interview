@@ -48,6 +48,24 @@ module.exports = {
      * reservationController.create()
      */
     create: function (req, res) {
+
+        sessionModel.findOne({_id: req.body.session_id}, function (err, session) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting session.',
+                    error: err
+                });
+            }
+            if (!session) {
+                return res.status(404).json({
+                    message: 'No such session'
+                });
+            }
+            //return res.json(session);
+            console.log(session)
+            console.log(session['reservation_count'])
+        });
+
         var reservation = new reservationModel({
 			email : req.body.email,
             session_id : req.body.session_id
