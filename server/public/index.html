@@ -1,0 +1,97 @@
+<html>
+
+<head>
+  <title>o-p-e-n</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+
+  <div id="app">
+
+      <div class="wrapper">
+
+      <header>
+        <div class="header_container">
+          <p>o</p>
+          <p>p</p>
+          <p>e</p>
+          <p>n</p>
+        </div>
+      </header>
+
+      <section>
+        <nav>
+          <li v-for="session in sessions">
+            <router-link to="/foo"> 
+            {{session.teacher}}
+            {{session.name}} 
+            {{session.time}}
+            {{session.duration}} minutes
+            </router-link>
+          </li>
+        </nav>
+        <router-view></router-view>
+        
+        <article>
+          <p>put the logo here</p>
+        </article>
+      </section>
+
+      <footer>
+        <div class="header_container">
+          <p>BE PRESENT, TOGETHER</p>
+          <p>FOLLOW ON INSTAGRAM</p>
+          <p>OPEN ROLES</p>
+          <p>SF, CA</p>
+        </div>
+      </footer>
+
+      </div>
+
+    
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+  <script>
+
+    import Foo from '../views/Foo.vue'
+
+    //const Foo = { template: '<div>foo</div>' }
+    const Bar = { template: '<div>bar</div>' }
+
+    const routes = [
+      { path: '/foo', component: Foo },
+      { path: '/bar', component: Bar }
+    ]
+
+    const router = new VueRouter({
+      routes // short for `routes: routes`
+    })
+
+  	const app = new Vue({
+        router,
+		    el: '#app',
+
+        data: {
+          sessions: []
+        },
+        created () {
+          fetch('/sessions')
+            .then(response => response.json())
+            .then(json => {
+              console.log(json)
+              this.sessions = json
+            })
+        }
+
+  		})
+  </script>
+
+
+</body>
+
+</html>
