@@ -1,13 +1,13 @@
 <template>
-<html>
+<!-- <html>
 
 <head>
   <title>o-p-e-n</title>
-  <!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-
+ -->
 
   <div id="app">
 
@@ -53,9 +53,9 @@
     
   </div>
 
-</body>
+<!-- </body>
 
-</html>
+</html> -->
 
 </template>
 
