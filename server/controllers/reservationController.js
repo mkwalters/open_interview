@@ -64,23 +64,29 @@ module.exports = {
             //return res.json(session);
             console.log(session)
             console.log(session['reservation_count'])
-        });
 
-        var reservation = new reservationModel({
-			email : req.body.email,
-            session_id : req.body.session_id
+            if (session['reservation_count'] < session['reservation_limit']) {
+                console.log('WE are okay to reserve')
+                var reservation = new reservationModel({
+                    email : req.body.email,
+                    session_id : req.body.session_id
 
-        });
-
-        reservation.save(function (err, reservation) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'Error when creating reservation',
-                    error: err
                 });
+
+                reservation.save(function (err, reservation) {
+                    if (err) {
+                        return res.status(500).json({
+                        message: 'Error when creating reservation',
+                        error: err
+                        });
+                    }
+                    return res.status(201).json(reservation);
+                });
+            } else {
+                console.log('all full!')
             }
-            return res.status(201).json(reservation);
         });
+
     },
 
     /**
