@@ -5,6 +5,12 @@
 	<div>
 	<p>{{$route.params.id}}</p>
 	<p>{{sessions.name}}</p>
+  <span>
+    email:
+    <input type="text" id="email_input">
+  </span>
+  <br>
+  <button v-on:click="reserve">Reserve</button>
 	</div>
 </template>
 
@@ -19,6 +25,11 @@ export default {
       .then(json => {
 		this.sessions = json
       })
+  },
+  methods: {
+    reserve: function () {
+      
+    }
   }
 }
 </script>
