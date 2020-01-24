@@ -28,7 +28,23 @@ export default {
   },
   methods: {
     reserve: function () {
-      
+      const data = {
+      "email": document.getElementById('email_input').value,
+      "session_id": this.$route.params.id
+      };
+
+    let dataString = JSON.stringify(data);
+
+    fetch('http://localhost:3000/reservations', {
+      method: 'POST',
+      body: dataString,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    }).then((response) => {
+      response
+    });
     }
   }
 }
