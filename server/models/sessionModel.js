@@ -7,7 +7,9 @@ var sessionSchema = new Schema({
 	'reservation_limit' : Number,
 	'reservation_count' : Number,
 	'description' : String,
-	'name' : String
+	'name' : String,
+	'teacher': String,
+	'location': String
 });
 
 module.exports = mongoose.model('session', sessionSchema);

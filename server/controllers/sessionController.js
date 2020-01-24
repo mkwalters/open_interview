@@ -54,6 +54,8 @@ module.exports = {
 			reservation_count : req.body.reservation_count,
 			description : req.body.description,
 			name : req.body.name
+            teacher : req.body.teacher,
+            loctaion : req.body.location
 
         });
 
