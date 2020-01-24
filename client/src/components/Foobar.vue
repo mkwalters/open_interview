@@ -25,18 +25,26 @@
 
       <section>
         <nav>
-          <li v-for="session in sessions" :key="session._id">
-            <router-link :to="{ name: 'show', params: { id: session._id }}">
-            {{session.teacher}}
-            {{session.name}} 
-            {{session.time}}
-            {{session.duration}} minutes
-          </router-link>
-          </li>
+
+          <div class="Aligner-item">
+          
+            <li v-for="session in sessions" :key="session._id">
+              <router-link :to="{ name: 'show', params: { id: session._id }}">
+              {{session.teacher}}/
+              {{session.name}}/
+              {{session.time}}/
+              {{session.duration}} minutes
+            </router-link>
+            </li>
+
+          </div>
+          
         </nav>
         
         <article>
-          <img alt="Vue logo" src="./../assets/logo.png">
+          <div class="Aligner-item">
+            <img alt="Vue logo" src="./../assets/logo.png">
+          </div>
         </article>
       </section>
 
@@ -88,7 +96,9 @@ body {
     flex-direction: column;
 
 }
-
+.Aligner-item {
+  max-width: 50%;
+}
 .header_container {
   width: 100%;
   display: flex;
@@ -121,10 +131,13 @@ nav {
   flex: 1;
   background: #000;
   padding: 20px;
-  text-align: center
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Style the list inside the menu */
+/* Style the list inside the menu 
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -137,6 +150,9 @@ article {
   flex: 1;
   background-color: #000;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Style the footer */
