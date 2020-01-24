@@ -1,4 +1,5 @@
 var reservationModel = require('../models/reservationModel.js');
+var sessionModel = require('../models/sessionModel.js');
 
 /**
  * reservationController.js
@@ -48,7 +49,8 @@ module.exports = {
      */
     create: function (req, res) {
         var reservation = new reservationModel({
-			email : req.body.email
+			email : req.body.email,
+            session_id : req.body.session_id
 
         });
 
