@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
-import Foobar from './components/Foobar.vue'
+import Index from './components/Index.vue'
 import Show from './components/Show.vue'
 
 Vue.use(VueRouter);
@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 
 
 const routes = [
-  { path: '/', component: Foobar },
+  { path: '/', component: Index },
   { path: '/show', name: 'show', component: Show }
 ]
 
