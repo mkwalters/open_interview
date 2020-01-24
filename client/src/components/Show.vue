@@ -2,13 +2,14 @@
 
 
 <template>
-	<div>
-	<p>{{sessions.name}}</p>
+	<div id="app">
+  <div>
+	<p style="padding-top:200px">{{sessions.name}}</p>
 	<p>{{sessions.teacher}}</p>
   <p>{{sessions.description}}</p>
   <p>{{sessions.time}}</p>
   <span>
-    email:
+    <p style="display:inline">Email: </p>
     <input type="text" id="email_input">
   </span>
   <br/>
@@ -16,6 +17,7 @@
   <button v-on:click="reserve">Reserve</button>
   <p>{{confirmation_message}}</p>
 	</div>
+  </div>
 </template>
 
 <script>
@@ -53,7 +55,7 @@ export default {
       if (response.status == 201) {
         this.confirmation_message = "Your reservation was successfully completed! See ya soon!"
       } else if (response.status == 503) {
-        this.confirmation_message = "We apologize but that class is already full."
+        this.confirmation_message = "We apologize but this class is already full."
       } else {
         this.confirmation_message = "An error occured."
       }
@@ -65,13 +67,15 @@ export default {
 </script>
 
 <style scoped>
-.wrapper, html, body {
-    height: 100%;
-    margin: 0;
+
+#app {
+  
+  margin-top: -16px;
+
 }
 
 p {
-  color: green;
+  color: white;
 }
 
 </style>
