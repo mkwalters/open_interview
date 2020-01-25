@@ -27,4 +27,12 @@ app.use('/users', usersRouter);
 app.use('/sessions', sessionsRouter);
 app.use('/reservations', reservationsRouter);
 
+app.get('*', (req, res) => {
+
+  console.log('go serve dist/index');
+
+  // console.log(path.join(__dirname + '../../client/build/index.html'));
+  // res.sendFile(path.join(__dirname + '../../client/build/index.html'));
+});
+
 module.exports = app;
