@@ -32,7 +32,7 @@
               <router-link :to="{ name: 'show', params: { id: session._id }}">
               {{session.teacher}}/
               {{session.name}}/
-              {{session.time}}/
+              {{session.time}}
               {{session.duration}} minutes
             </router-link>
             </li>
