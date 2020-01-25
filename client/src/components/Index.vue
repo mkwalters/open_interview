@@ -34,6 +34,9 @@
               {{session.name}}/
               {{session.time}}
               {{session.duration}} minutes
+              <span v-if="session.reservation_limit <= session.reservation_count">
+                SOLD OUT
+              </span>
             </router-link>
             </li>
 
