@@ -30,7 +30,7 @@ export default {
 	},
   created () {
     //http://localhost:3000/sessions/
-    fetch('/sessions/' + this.$route.params.id.toString() )
+    fetch('/sessions/' + this.$route.query.id.toString() )
       .then(response => response.json())
       .then(json => {
 		this.sessions = json

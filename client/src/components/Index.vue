@@ -29,7 +29,7 @@
           <div class="Aligner-item">
           
             <li v-for="session in sessions" :key="session._id">
-              <router-link :to="{ name: 'show', params: { id: session._id }}">
+              <router-link :to="{ name: 'show', query: { id: session._id }}">
               {{session.teacher}}/
               {{session.name}}/
               {{session.time}}
