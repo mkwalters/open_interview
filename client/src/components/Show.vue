@@ -40,7 +40,7 @@ export default {
     reserve: function () {
       const data = {
       "email": document.getElementById('email_input').value,
-      "session_id": this.$route.params.id
+      "session_id": this.$route.query.id
       };
 
     let dataString = JSON.stringify(data);
