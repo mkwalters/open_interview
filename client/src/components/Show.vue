@@ -29,7 +29,8 @@ export default {
     }
 	},
   created () {
-    fetch('http://localhost:3000/sessions/' + this.$route.params.id.toString() )
+    //http://localhost:3000/sessions/
+    fetch('/sessions' + this.$route.params.id.toString() )
       .then(response => response.json())
       .then(json => {
 		this.sessions = json
@@ -43,8 +44,8 @@ export default {
       };
 
     let dataString = JSON.stringify(data);
-
-    fetch('http://localhost:3000/reservations', {
+    //http://localhost:3000/reservations
+    fetch('/reservations', {
       method: 'POST',
       body: dataString,
       headers: {

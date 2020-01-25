@@ -73,7 +73,8 @@ export default {
 		return {sessions: []}
 	},
   created () {
-    fetch('http://localhost:3000/sessions')
+    //http://localhost:3000/sessions
+    fetch('/sessions')
       .then(response => response.json())
       .then(json => {
 		this.sessions = json
