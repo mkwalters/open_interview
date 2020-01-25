@@ -11,8 +11,17 @@ var reservationsRouter = require('./routes/reservationRoutes');
 
 var app = express();
 
+// the commented out code is for connecting to the local database
+// we should check ENV variable and connect to the appropraite db 
+
+// const mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
+
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
+var mongodbUri = 'mongodb://heroku_r1x1vsv2:vsibjstf5n1doq6n6v04sarblh@ds213705.mlab.com:13705/heroku_r1x1vsv2'
+mongoose.connect(mongodbUri, options);
 
 app.use(cors())
 
